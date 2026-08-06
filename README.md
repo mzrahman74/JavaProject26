@@ -1,4 +1,5 @@
 JavaProject26
+
 A modern Java template and starter project using Java 17+, Gradle, JUnit 5, and Allure Framework for detailed test reporting.
 
 📋 Features
