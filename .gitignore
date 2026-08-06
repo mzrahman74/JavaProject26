@@ -1,0 +1,47 @@
+### Gradle ###
+.gradle/
+build/
+allure-results/
+.allure/
+
+# Allow gradle-wrapper.jar explicitly (not affected because gradle/ folder isn't ignored)
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Keep standard IntelliJ shared configurations if needed (Optional)
+!.idea/codeStyles/
+!.idea/icon.svg
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Operating System & System Files ###
+.DS_Store
+Thumbs.db
+
+### Logs & Temp ###
+*.log
+*.tmp
