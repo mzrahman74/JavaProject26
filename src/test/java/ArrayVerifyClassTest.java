@@ -42,6 +42,7 @@ public class ArrayVerifyClassTest {
     assertNotEquals(4, notSecondLowestNumber);
   }
   @Test
+  @Order(5)
   @DisplayName("Should pass as a negative test for method_two().")
   void shouldPassNegativeTestFindHighestNumber(){
     int[] numbers = {10000, 500, 400, 600, 7000, 9000, 5};
@@ -49,6 +50,7 @@ public class ArrayVerifyClassTest {
     assertNotEquals(7000, notHighestNumber);
   }
   @Test
+  @Order(6)
   @DisplayName("Should pass a negative test for method_one().")
   void shouldPassNegativeTestLowestAge() {
     int [] ages = {2, 0, 45, 65, 3, 4, 8};
