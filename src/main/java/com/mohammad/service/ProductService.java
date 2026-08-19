@@ -8,10 +8,10 @@ HashSet: Aggregating values while automatically removing duplicates.
 
 
 import com.mohammad.utility.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ProductService {
     /**
@@ -19,6 +19,7 @@ public class ProductService {
      * Preserve insertion order in the resulting list.
      *
      */
+    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
     public List<Product> filterProductsByPriceRange(List<Product> products, double minPrice,  double maxPrice) {
         if (products == null) return Collections.emptyList();
 
@@ -29,5 +30,18 @@ public class ProductService {
             }
         }
         return filteredList;
+    }
+
+    /**
+     * HashMap example: groups products into lists keyed by their category name.
+     */
+    public Map<String, List<Product>> groupProductCategory(List<Product> products) {
+        if (products == null) return Collections.emptyMap();
+
+        Map<String, List<Product>> categoryMap = new HashMap<>();
+        for(Product product: products) {
+            categoryMap.computeIfAbsent(product.category(), k -> new ArrayList<>()).add(product);
+        }
+        return categoryMap;
     }
 }
