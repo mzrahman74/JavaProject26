@@ -87,4 +87,26 @@ class ProductServiceTest {
       assertTrue(grouped.isEmpty());
     }
   }
+  @Nested
+  @DisplayName("HashSet Operations: extractUniqueTags")
+  class HashSetTests {
+    @Test
+    @DisplayName("Should extract distinct tags and elimante duplicates")
+    void shouldExtractUnique() {
+      Set<String> uniqueTags = productService.extractUniqueTags(sampleProduct);
+
+      // Tags 'tech', 'work', and 'home' appear multiple times in sample data but are deduplicated
+      assertEquals(5, uniqueTags.size());
+      assertTrue(uniqueTags.containsAll(Set.of("tech", "work", "portable", "accessory", "home", "comfort")));
+    }
+    @Test
+    @DisplayName("Should skip products with null tag lists without throwing NPE")
+    void shouldHandleProductsWithNullTags() {
+      List<Product> productsWithNullTags = List.of(new Product( "p5", "Lamp", "Decor", 40.00, null));
+      Set<String> tags = productService.extractUniqueTags(productsWithNullTags);
+
+      assertNotNull(tags);
+      assertTrue(tags.isEmpty());
+    }
+  }
 }
