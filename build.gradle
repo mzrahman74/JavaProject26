@@ -16,6 +16,8 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-junit5:2.29.1'
     implementation('org.slf4j:slf4j-api:2.0.12')
     implementation('ch.qos.logback:logback-classic:1.5.13')
+    // Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind
+    implementation("tools.jackson.core:jackson-databind:3.2.2")
 }
 
 test {
