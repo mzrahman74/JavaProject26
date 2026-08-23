@@ -91,12 +91,12 @@ class ProductServiceTest {
   @DisplayName("HashSet Operations: extractUniqueTags")
   class HashSetTests {
     @Test
-    @DisplayName("Should extract distinct tags and elimante duplicates")
+    @DisplayName("Should extract distinct tags and eliminate duplicates")
     void shouldExtractUnique() {
       Set<String> uniqueTags = productService.extractUniqueTags(sampleProduct);
 
       // Tags 'tech', 'work', and 'home' appear multiple times in sample data but are deduplicated
-      assertEquals(5, uniqueTags.size());
+      assertEquals(6, uniqueTags.size());
       assertTrue(uniqueTags.containsAll(Set.of("tech", "work", "portable", "accessory", "home", "comfort")));
     }
     @Test
