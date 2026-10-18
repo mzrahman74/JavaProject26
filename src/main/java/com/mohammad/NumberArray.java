@@ -7,9 +7,10 @@ import static java.util.Arrays.stream;
 
 public class NumberArray {
   public static void main(String[] args) {
-      int [] arr = {100, 200, 300};
+      int [] arr = {100, 200, 300, 300, 400};
     System.out.println(duplicateExist(arr));
-
+    method_four(arr);
+    method_five();
   }
 
   /*
@@ -51,6 +52,22 @@ public class NumberArray {
      */
     public static boolean duplicateExist(int [] arr) {
         return Arrays.stream(arr).distinct().count() != arr.length;
-
+    }
+    /*
+    find the second-highest number
+     */
+    public static int method_four(int [] numbers) {
+   return stream(numbers).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+    }
+    /*
+    find the highest number
+     */
+    public static void method_five() {
+        int [] arrays = {500, 400, 200, 300, 100, 10};
+    stream(arrays)
+        .boxed()
+        .sorted(Comparator.reverseOrder())
+        .findFirst()
+        .ifPresent(System.out::println);
     }
 }
