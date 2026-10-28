@@ -6,6 +6,7 @@ import java.util.HashSet;
 
 public class DsClass {
     public static void main(String[] args){
+        method_four();
 
     }
     /*
@@ -41,5 +42,25 @@ public class DsClass {
         capitalCities.put("Germany", "Berlin");
         capitalCities.put("Norway", "Oslo");
     System.out.println(capitalCities);
+    }
+    /*
+    find the desire company to work for
+     */
+    public static void method_four() {
+        ArrayList<String> companies = new ArrayList<>();
+        companies.add("AT&T");
+        companies.add("AMAZON");
+        companies.add("FIDELITY");
+        companies.add("BANK OF AMERICA");
+        companies.add("WALMART");
+        companies.add("QUIKTRIP");
+        companies.add("GOODWILL");
+        companies.add("SONIC");
+        companies.add("TACO BELL");
+        companies.add("TACO TICO");
+        companies.add("BURGER KING");
+        companies.add("MACDONALD");
+
+    companies.stream().filter(n -> n.equals("AMAZON")).findFirst().ifPresent(System.out::println);
     }
 }
