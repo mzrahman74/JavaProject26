@@ -9,8 +9,7 @@ public class NumberArray {
   public static void main(String[] args) {
       int [] arr = {100, 200, 300, 300, 400};
     System.out.println(duplicateExist(arr));
-    method_four(arr);
-    method_five();
+   method_six();
   }
 
   /*
@@ -69,5 +68,12 @@ public class NumberArray {
         .sorted(Comparator.reverseOrder())
         .findFirst()
         .ifPresent(System.out::println);
+    }
+    /*
+    find the first lowest number from the array
+     */
+    public static int method_six() {
+        int [] numbers = {45, 65, 100, 3, 3000, 2, 5000};
+        return (int) stream(numbers).boxed().sorted().distinct().findFirst().get();
     }
 }
